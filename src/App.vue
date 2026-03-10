@@ -4,6 +4,7 @@
     <aside
       class="fixed top-0 left-0 h-full w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 z-40 flex flex-col hidden lg:flex"
     >
+    <Analytics/>
       <!-- Logo -->
       <div class="p-6 border-b border-slate-100 dark:border-slate-800">
         <RouterLink to="/" class="flex items-center gap-3">
@@ -128,7 +129,7 @@
 import { ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import { useAppStore } from '@/stores/appStore.js'
-
+import { Analytics } from "@vercel/analytics/next"
 const appStore = useAppStore()
 const mobileMenuOpen = ref(false)
 
