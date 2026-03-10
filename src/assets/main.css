@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: #f8fafc;
+    --color-surface: #ffffff;
+    --color-border: #e2e8f0;
+    --color-text: #0f172a;
+    --color-text-muted: #64748b;
+    --color-accent: #14b8a6;
+    --color-accent-light: #ccfbef;
+  }
+
+  .dark {
+    --color-bg: #020617;
+    --color-surface: #0f172a;
+    --color-border: #1e293b;
+    --color-text: #f1f5f9;
+    --color-text-muted: #94a3b8;
+    --color-accent: #2dd4bf;
+    --color-accent-light: #042f2e;
+  }
+
+  * {
+    box-sizing: border-box;
+    transition: background-color 0.2s, border-color 0.2s, color 0.1s;
+  }
+
+  body {
+    @apply bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    @apply bg-teal-200 dark:bg-teal-800;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm;
+  }
+
+  .card-hover {
+    @apply card transition-all duration-200 hover:shadow-md hover:border-brand-300 dark:hover:border-brand-700;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-500/50 focus:border-brand-500 dark:focus:border-brand-400 transition-all duration-200 font-mono text-sm;
+  }
+
+  .label-text {
+    @apply block text-sm font-medium text-slate-600 dark:text-slate-400 mb-1.5;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-brand-500 hover:bg-brand-600 active:bg-brand-700 text-white font-semibold rounded-xl transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-brand-500/50 focus:ring-offset-2 dark:focus:ring-offset-slate-900 shadow-sm hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-semibold rounded-xl transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-slate-300/50 focus:ring-offset-2 dark:focus:ring-offset-slate-900;
+  }
+
+  .btn-ghost {
+    @apply px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg transition-all duration-150 text-sm;
+  }
+
+  .stat-card {
+    @apply card p-5 flex flex-col gap-1;
+  }
+
+  .stat-value {
+    @apply text-2xl font-bold font-mono text-slate-900 dark:text-slate-100;
+  }
+
+  .stat-label {
+    @apply text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider;
+  }
+
+  .tag {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium;
+  }
+
+  .tag-teal {
+    @apply tag bg-teal-100 text-teal-700 dark:bg-teal-900/50 dark:text-teal-300;
+  }
+
+  .tag-orange {
+    @apply tag bg-orange-100 text-orange-700 dark:bg-orange-900/50 dark:text-orange-300;
+  }
+
+  .tag-red {
+    @apply tag bg-red-100 text-red-700 dark:bg-red-900/50 dark:text-red-300;
+  }
+
+  .page-header {
+    @apply mb-8;
+  }
+
+  .page-title {
+    @apply text-3xl font-bold text-slate-900 dark:text-slate-50;
+  }
+
+  .page-subtitle {
+    @apply mt-1.5 text-slate-500 dark:text-slate-400 text-sm;
+  }
+
+  .section-divider {
+    @apply border-t border-slate-100 dark:border-slate-800 my-6;
+  }
+
+  /* Result number animation */
+  .result-number {
+    @apply animate-number-change inline-block;
+  }
+
+  /* Tax bracket table */
+  .bracket-active {
+    @apply bg-brand-50 dark:bg-brand-950/50 border-l-4 border-brand-500;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-1.5 h-1.5;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 dark:bg-slate-700 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400 dark:bg-slate-600;
+  }
+}
